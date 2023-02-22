@@ -1,5 +1,5 @@
 import { Table, Model, Column, DataType } from "sequelize-typescript";
-import { Comics, Thumbnail, URL } from "../../dto/MarvelResponse";
+import { Comics, Thumbnail, URL } from "../../../Dto/MarvelResponse";
 
 
 @Table({
@@ -12,6 +12,12 @@ export class Character extends Model<Character> {
     allowNull: false,
   })
     id!: number;
+
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false,
+  })
+    id_marvel!: number;
 
   @Column({
     type: DataType.STRING,
