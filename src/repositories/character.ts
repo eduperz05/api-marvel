@@ -46,7 +46,7 @@ export class CharacterRepositorySequelize implements CharacterRepository {
     }
   }
 
-  public async getAll(page: any): Promise<object>{
+  public async getAll(page: any): Promise<object|null>{
     try {
       const characters = await Character.findAndCountAll({ 
         limit: page.limit,
