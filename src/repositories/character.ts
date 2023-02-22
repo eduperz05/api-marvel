@@ -1,10 +1,10 @@
-import { Character } from "../../API/models/character";
+import { Character } from "../API/models/character";
 
 export interface CharacterRepository {
   existData(): Promise<boolean|null>;
   set(character: any): Promise<any|null>;
-  get(id: number): Promise<any|null>;
   getAll(page: any): Promise<any|null>;
+  getById(id: number): Promise<any|null>;
   getByName(name: string): Promise<any|null>;
 }
 
@@ -28,7 +28,7 @@ export class CharacterRepositorySequelize implements CharacterRepository {
     return;
   }
 
-  public async get(id: number): Promise<Character|null>{
+  public async getById(id: number): Promise<Character|null>{
     try {
       const character = await Character.findOne({ where: { id_marvel: id } });
       return character;

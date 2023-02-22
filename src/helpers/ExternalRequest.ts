@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Convert } from "../../Dto/convert";
-import { MarvelResponse } from "../../Dto/MarvelResponse";
+import { Convert } from "../Dto/convert";
+import { MarvelResponse } from "../Dto/MarvelResponse";
 
 export interface ExternalRequestHelper {
   getCharacters(): Promise<any|null>;

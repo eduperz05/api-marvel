@@ -1,5 +1,5 @@
 import { Table, Model, Column, DataType } from "sequelize-typescript";
-import { Comics, Thumbnail, URL } from "../../../Dto/MarvelResponse";
+import { Comics, Thumbnail, URL } from "../../Dto/MarvelResponse";
 
 
 @Table({

@@ -1,7 +1,7 @@
 import express, { urlencoded } from "express";
 import cors from "cors";
-// import { errorHandler } from "./middlewares/errorHandler";
-// import { router } from "./API/routes/character";
+import { errorHandler } from "./API/middlewares/errorHandler";
+import { router } from "./API/routes/public";
 
 const app = express();
 
@@ -13,10 +13,10 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome, this API will provide you a full directory of all marvel characters!");
 });
 
-// app.use("/public/characters", router);
+app.use("/public/characters", router);
 
-// // Error handler
-// app.use(errorHandler);
+// Error handler
+app.use(errorHandler);
 
 export default app;
 
