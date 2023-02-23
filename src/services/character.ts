@@ -1,4 +1,4 @@
-import { CharacterRepository } from "../repositories/character";
+import { CharacterRepository } from "../API/repositories/character";
 
 export const findAllCharacters = async(page: object, repository: CharacterRepository) => {
   const characters = await repository.getAll(page);

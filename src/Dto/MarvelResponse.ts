@@ -52,13 +52,28 @@ export interface Stories {
 export interface StoriesItem {
   resourceURI: string;
   name: string;
-  type: ItemType;
+  type: string;
 }
 
 export enum ItemType {
   Cover = "cover",
   Empty = "",
   InteriorStory = "interiorStory",
+  pinup = "pinup",
+  backcover = "backcover",
+  promo = "promo",
+  textStory = "text story",
+  textArticle = "text article",
+  textFeature = "text feature",
+  ad = "ad",
+  recap = "recap",
+  profile = "profile",
+  pinUp = "pin-up",
+  letters = "letters",
+  misteryStory = "mistery story",
+  statementOfOwnership = "statement of ownership",
+  activity = "activity",
+  tradingCardInsert = "trading card insert",
 }
 
 export interface Thumbnail {
@@ -69,6 +84,7 @@ export interface Thumbnail {
 export enum Extension {
   GIF = "gif",
   Jpg = "jpg",
+  Png = "png",
 }
 
 export interface URL {

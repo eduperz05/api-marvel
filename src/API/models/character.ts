@@ -1,6 +1,4 @@
 import { Table, Model, Column, DataType } from "sequelize-typescript";
-import { Comics, Thumbnail, URL } from "../../Dto/MarvelResponse";
-
 
 @Table({
   tableName: "CHARACTERS",
@@ -8,8 +6,9 @@ import { Comics, Thumbnail, URL } from "../../Dto/MarvelResponse";
 export class Character extends Model<Character> {
   @Column({
     type: DataType.INTEGER,
-    primaryKey: true,
     allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
   })
     id!: number;
 
@@ -26,7 +25,7 @@ export class Character extends Model<Character> {
     name!: string;
     
   @Column({
-    type: DataType.STRING,
+    type: DataType.TEXT,
     allowNull: false,
   })
     description!: string;
@@ -38,44 +37,14 @@ export class Character extends Model<Character> {
     modified!: string;
       
   @Column({
-    type: DataType.STRING,
+    type: DataType.TEXT,
     allowNull: true,
   })
-    thumbnail!: Thumbnail;
+    thumbnail!: string;
       
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
     resourceURI!: string;
-      
-  @Column({
-    type: DataType.STRING,
-    allowNull: true,
-  })
-    comics!: Comics;
-      
-  @Column({
-    type: DataType.STRING,
-    allowNull: true,
-  })
-    series!: Comics;
-      
-  @Column({
-    type: DataType.STRING,
-    allowNull: true,
-  })
-    stories!: Comics;
-      
-  @Column({
-    type: DataType.STRING,
-    allowNull: true,
-  })
-    events!: Comics;
-      
-  @Column({
-    type: DataType.STRING,
-    allowNull: true,
-  })
-    urls!: URL[];
 }

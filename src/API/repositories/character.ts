@@ -1,8 +1,9 @@
-import { Character } from "../API/models/character";
+import { Result } from "../../Dto/MarvelResponse";
+import { Character } from "../models/character";
 
 export interface CharacterRepository {
   existData(): Promise<boolean|null>;
-  set(character: any): Promise<any|null>;
+  saveCharacters(character: any): Promise<any|null>;
   getAll(page: any): Promise<any|null>;
   getById(id: number): Promise<any|null>;
   getByName(name: string): Promise<any|null>;
@@ -19,9 +20,19 @@ export class CharacterRepositorySequelize implements CharacterRepository {
     }
   }
     
-  public async set(character: any): Promise<void> {
+  public async saveCharacters(characters: Result[]): Promise<void> {
     try {
-      await Character.create(character);
+      Promise.all(characters.map(async(character) => {
+        const characterDomain: any = {
+          "id_marvel": character.id,
+          "name": character.name,
+          "description": character.description,
+          "modified": character.modified,
+          "thumbnail": character.thumbnail.path + "." + character.thumbnail.extension,
+          "resourceURI": character.resourceURI
+        };
+        await Character.create(characterDomain);
+      }));
     } catch (error) {
       throw new Error("Error storing on database.");
     }

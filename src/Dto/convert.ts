@@ -1,4 +1,4 @@
-import { MarvelResponse } from "./MarvelResponse";
+import { MarvelResponse, Result } from "./MarvelResponse";
 
 
 export class Convert {
@@ -8,6 +8,10 @@ export class Convert {
 
   public static MarvelResponseToJson(value: MarvelResponse): string {
     return JSON.stringify(uncast(value, r("MarvelResponse")), null, 2);
+  }
+
+  public static ResultResponseToJson(value: Result): string {
+    return JSON.stringify(uncast(value, r("Result")), null, 2);
   }
 }
 
@@ -218,10 +222,26 @@ const typeMap: any = {
     "cover",
     "",
     "interiorStory",
+    "pinup",
+    "backcovers",
+    "letters",
+    "mystery story",
+    "promo",
+    "text story",
+    "text article",
+    "text feature",
+    "ad",
+    "recap",
+    "profile",
+    "pin-up",
+    "activity",
+    "statement of ownership",
+    "trading card insert"
   ],
   "Extension": [
     "gif",
     "jpg",
+    "png",
   ],
   "URLType": [
     "comiclink",

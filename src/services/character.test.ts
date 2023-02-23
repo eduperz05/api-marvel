@@ -1,4 +1,4 @@
-import { CharacterRepository } from "../repositories/character";
+import { CharacterRepository } from "../API/repositories/character";
 import { findAllCharacters, findCharacterById, findCharacterByName } from "./character";
 
 class CharacterRepositoryMock implements CharacterRepository {
@@ -6,7 +6,7 @@ class CharacterRepositoryMock implements CharacterRepository {
     throw new Error("Method not implemented.");
   }
 
-  public async set(): Promise<any> {
+  public async saveCharacters(): Promise<any> {
     throw new Error("Method not implemented.");
   }
 
@@ -75,12 +75,12 @@ describe("findCharacterById service", () => {
   };
 
   test("should return 'Characters not found'.", async() => {
-    repository.getAll = jest.fn().mockReturnValue(Promise.resolve(null));
+    repository.getById = jest.fn().mockReturnValue(Promise.resolve(null));
     await expect(findCharacterById(id, repository)).rejects.toThrowError("Character not found");
   });
 
   test("should return a character", async() => {
-    repository.getAll = jest.fn().mockReturnValue(Promise.resolve(character));
+    repository.getById = jest.fn().mockReturnValue(Promise.resolve(character));
     await expect(findCharacterById(id, repository)).resolves.toEqual(characterJSONed);
   });
 });
@@ -101,12 +101,12 @@ describe("findCharacterByName service", () => {
   };
 
   test("should return 'Characters not found'.", async() => {
-    repository.getAll = jest.fn().mockReturnValue(Promise.resolve(null));
+    repository.getByName = jest.fn().mockReturnValue(Promise.resolve(null));
     await expect(findCharacterByName(name, repository)).rejects.toThrowError("Character not found");
   });
 
   test("should return a character", async() => {
-    repository.getAll = jest.fn().mockReturnValue(Promise.resolve(character));
+    repository.getByName = jest.fn().mockReturnValue(Promise.resolve(character));
     await expect(findCharacterByName(name, repository)).resolves.toEqual(characterJSONed);
   });
 });
