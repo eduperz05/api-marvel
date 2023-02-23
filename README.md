@@ -12,7 +12,7 @@ Some variables are needed on this exercise to run:
 
 PORT=3000
 
-# [Oficial MArvel API]([/guides/content/editing-an-existing-page](https://developer.marvel.com/documentation/getting_started))
+# [Oficial MArvel API](https://developer.marvel.com/documentation/getting_started))
 
 PUBLIC_KEY=
 PRIVATE_KEY
@@ -39,15 +39,15 @@ docker-compose up
 
 There are some enpoints already implemented, all them in the current version are only available to be used locally.
 
-```http
+```https
 localhost:3000/public/characters/
 ```
 
-```http
+```https
 localhost:3000/public/characters/id/:id
 ```
 
-```http
+```https
 localhost:3000/public/characters/name/:name
 ```
 
