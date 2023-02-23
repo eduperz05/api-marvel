@@ -14,7 +14,7 @@ PORT=3000
 
 # Oficial MArvel API 
 ```
-[Enlace](https://developer.marvel.com/documentation/getting_started)
++ [Link](https://developer.marvel.com/documentation/getting_started)
 ```
 PUBLIC_KEY=
 PRIVATE_KEY=
