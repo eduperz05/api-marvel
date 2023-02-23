@@ -11,7 +11,11 @@ Some variables are needed on this exercise to run:
 # APP
 
 PORT=3000
-SECRET_MARVEL=
+
+# [Oficial MArvel API]([/guides/content/editing-an-existing-page](https://developer.marvel.com/documentation/getting_started))
+
+PUBLIC_KEY=
+PRIVATE_KEY
 
 # DB
 
@@ -25,9 +29,26 @@ DB_PASSWORD=
 
 ## Docker
 
-This exercise works with Docker, just build and up the compose to set it ready.
+This exercise works with Docker localy right now, to set it up just build and up the compose to set it ready.
 
 ```sh
 docker-compose up
 ```
 
+## Postman / ThunderClient
+
+There are some enpoints already implemented, all them in the current version are only available to be used locally.
+
+```http
+localhost:3000/public/characters/
+```
+
+```http
+localhost:3000/public/characters/id/:id
+```
+
+```http
+localhost:3000/public/characters/name/:name
+```
+
+Keep in mind that the application on its first use downloads the original information from Marvel, so it may take a while to execute the first request.
