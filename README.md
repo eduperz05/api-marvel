@@ -7,20 +7,18 @@ This is a simple backend developed on Express and typescript with job apply purp
 
 Some variables are needed on this exercise to run:
 
-```
-# APP
 
+#### APP
+```
 PORT=3000
-
-# Oficial MArvel API 
 ```
-+ [Link](https://developer.marvel.com/documentation/getting_started)
+#### [Oficial MArvel API](https://developer.marvel.com/documentation/getting_started)
 ```
 PUBLIC_KEY=
 PRIVATE_KEY=
-
-# DB
-
+```
+#### DB
+```
 DB_SCHEMA=marvel_api
 DB_HOST=localhost
 DB_PORT=3306
